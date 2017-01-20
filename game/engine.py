@@ -4,7 +4,10 @@ class Engine:
 		self.away_team = away_team
 		
 	def scoreboard(self):
-		print("%s %s : %s %s" % (home_team.name, home_team.score, away_team.name, away_team.score)
+		self.home_team.score += self.home_team.players[0].shoot(self.away_team.players[0])
+		self.away_team.score += self.away_team.players[0].shoot(self.home_team.players[0])
+
+		print("%s %s : %s %s" % (self.home_team.name, self.home_team.score, self.away_team.name, self.away_team.score))
 		
 	def action(self):
 		pass
@@ -12,9 +15,9 @@ class Engine:
 		
 	def winner(self):
 		winner = None
-		if home_team.score > away_team.score:
-			winner = home_team
-		elif home_team.score < away_team.score:
-			winner = away_team
+		if self.home_team.score > self.away_team.score:
+			winner = self.home_team
+		elif self.home_team.score < self.away_team.score:
+			winner = self.away_team
 		
 		return winner

@@ -5,6 +5,3 @@ class Skill:
 		self.midfield = midfield
 		self.attack = attack
 		self.speed = speed
-		self.fitness = fitness
-		
-	
